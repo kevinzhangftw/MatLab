@@ -1,7 +1,0 @@
-% read image
-im = imread('dark.tif');
-
-im2 = zeros(size(im));
-
-% show image
-imshow(im2);

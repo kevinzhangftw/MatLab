@@ -1,18 +1,19 @@
 % read image
 im = imread('dark.tif');
-
-% show image
-figure,imshow(im);
-
+%input image in matrix form
 i = im(:,:,1);
 
-rtemp = min(i);         % find the min. value of pixels in all the columns (row vector)
-rmin = min(rtemp);      % find the min. value of pixel in the image
-rtemp = max(i);         % find the max. value of pixels in all the columns (row vector)
-rmax = max(rtemp);      % find the max. value of pixel in the image
+temp = min(i);         
+a = min(temp)+20;      
+temp = max(i);         
+b = max(temp)-45;     
 
-m = 255/(rmax - rmin);  % find the slope of line joining point (0,255) to (rmin,rmax)
-c = 255 - m*rmax;       % find the intercept of the straight line with the axis
+slope = 255/(b - a);  
+p0 = 0;
 
-i_new = m*i + 50;        % transform the image according to new slope
-figure,imshow(i_new);
+im2 = slope*(i-a) + p0; 
+
+figure,imshow(im);
+figure,imshow(im2);
+figure,imhist(im);
+figure,imhist(im2);
