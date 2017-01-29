@@ -4,12 +4,12 @@ im = imread('dark.tif');
 i = im(:,:,1);
 
 temp = min(i);         
-a = min(temp)+20;      
+a = min(temp);      
 temp = max(i);         
-b = max(temp)-45;     
+b = max(temp)-65;     
 
 slope = 255/(b - a);  
-p0 = 0;
+p0 = 20;
 
 im2 = slope*(i-a) + p0; 
 

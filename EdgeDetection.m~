@@ -1,0 +1,19 @@
+noisyimg = imread('trees_var025.tif');
+% 
+% figure, imshow(noisyimg);
+% 
+% smoothedimg = medfilt2(noisyimg, [5 5]);
+
+smoothedimg = imgaussfilt(noisyimg, 4);
+% figure, imshow(smoothedimg);
+% 
+%  edgeNImgSobel = edge(noisyimg,'Sobel');
+%  figure, imshow(edgeNImgSobel);
+
+% edgeSImgSobel = edge(smoothedimg,'Sobel');
+% figure, imshow(edgeSImgSobel);
+
+
+edgeNImgPr = edge(noisyimg,'Sobel');
+figure, imshow(edgeNImgSobel);
+

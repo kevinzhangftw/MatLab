@@ -12,4 +12,5 @@ csum=cumsum(Output);
 
 im2=csum(im+1);
 
+figure, imhist(im2);
 figure, imshow(im2);
