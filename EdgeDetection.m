@@ -1,12 +1,13 @@
 noisyimg = imread('trees_var025.tif');
-% 
+
 % figure, imshow(noisyimg);
-% 
-% smoothedimg = medfilt2(noisyimg, [5 5]);
 
 smoothedimg = imgaussfilt(noisyimg, 4);
 % figure, imshow(smoothedimg);
-% 
+
+edgeSImgRoberts = edge(smoothedimg,'Roberts');
+figure, imshow(edgeSImgRoberts);
+ 
 %  edgeNImgSobel = edge(noisyimg,'Sobel');
 %  figure, imshow(edgeNImgSobel);
 
@@ -24,5 +25,5 @@ smoothedimg = imgaussfilt(noisyimg, 4);
 % edgeNImgCanny = edge(noisyimg,'Canny');
 % figure, imshow(edgeNImgCanny);
 
-edgeSImgCanny = edge(smoothedimg,'Canny');
-figure, imshow(edgeSImgCanny);
+% edgeSImgCanny = edge(smoothedimg,'Canny');
+% figure, imshow(edgeSImgCanny);
